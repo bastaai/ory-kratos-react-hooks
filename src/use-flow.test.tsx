@@ -42,6 +42,6 @@ describe('useFlow', () => {
     );
 
     const html: React.JSX.Element = result.current.html;
-    expect(html.type).toBe(Symbol.for('react.fragment'));
+    expect(html.type.toString()).toBe('Symbol(react.fragment)');
   });
 });

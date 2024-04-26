@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Configuration, FrontendApi } from '@ory/client';
-import { edgeConfig } from '@ory/integrations/next';
 
 import {
   FlowTypeMap,
@@ -13,13 +12,13 @@ import { createFlow, getFlow, updateFlow } from './services';
 import { handleFlowError, handleStatusError } from './errors';
 import generateHtml from './generate-html';
 
-export default function useFlow({
-  flowType,
-  options,
-}: UseFlowParams): UseFlowReturn {
+export default function useFlow(
+  { flowType, options }: UseFlowParams,
+  config?: Configuration
+): UseFlowReturn {
   const router = useRouter();
   const ory = useMemo(() => {
-    return new FrontendApi(new Configuration(edgeConfig));
+    return new FrontendApi(config);
   }, []);
   const [flow, setFlow] = useState<FlowTypeMap[typeof flowType]>();
 
