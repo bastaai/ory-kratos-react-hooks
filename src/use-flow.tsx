@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Configuration, FrontendApi } from '@ory/client';
+import { edgeConfig } from '@ory/integrations/next';
 
 import {
   FlowTypeMap,
@@ -11,16 +12,6 @@ import useRouter, { getUrlParams } from './use-router';
 import { createFlow, getFlow, updateFlow } from './services';
 import { handleFlowError, handleStatusError } from './errors';
 import generateHtml from './generate-html';
-
-/**
- * SDK configuration for using the ory-next library.
- */
-declare const edgeConfig: {
-  basePath: string;
-  baseOptions: {
-    withCredentials: boolean;
-  };
-};
 
 export default function useFlow({
   flowType,
