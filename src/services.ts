@@ -207,7 +207,6 @@ export const formToFlowRequest = function (
           method: 'oidc',
           provider: provider,
           csrf_token: csrfToken,
-          traits: traits,
         },
       };
     }
@@ -231,7 +230,6 @@ export const formToFlowRequest = function (
           method: 'oidc',
           provider: provider,
           csrf_token: csrfToken,
-          traits: traits,
         },
       };
     }
