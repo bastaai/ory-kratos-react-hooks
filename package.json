@@ -1,5 +1,5 @@
 {
-  "name": "ory-kratos-react-hooks",
+  "name": "@bastaai/ory-kratos-react-hooks",
   "version": "0.0.0-alpha.0",
   "description": "",
   "main": "dist/index.js",
